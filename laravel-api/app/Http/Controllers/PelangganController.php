@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pelanggan;
+
 
 class PelangganController extends Controller
 {
@@ -14,6 +16,7 @@ class PelangganController extends Controller
     public function index()
     {
         //
+        return Pelanggan::all();
     }
 
     /**
@@ -35,6 +38,11 @@ class PelangganController extends Controller
     public function store(Request $request)
     {
         //
+        $pelanggan = new Pelanggan();
+        $pelanggan->nama = $request->nama;
+        $pelanggan->domisili = $request->domisili;
+        $pelanggan->jenis_kelamin = $request->jenis_kelamin;
+        $pelanggan->save();
     }
 
     /**
@@ -46,6 +54,7 @@ class PelangganController extends Controller
     public function show($id)
     {
         //
+        return Pelanggan::find($id);
     }
 
     /**
@@ -69,6 +78,11 @@ class PelangganController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan->nama = $request->nama;
+        $pelanggan->domisili = $request->domisili;
+        $pelanggan->jenis_kelamin = $request->jenis_kelamin;
+        $pelanggan->save();
     }
 
     /**
@@ -80,5 +94,6 @@ class PelangganController extends Controller
     public function destroy($id)
     {
         //
+        return Pelanggan::find($id)->delete();
     }
 }
