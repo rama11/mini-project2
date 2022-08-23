@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\ItemPenjualanController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('barang', 'BarangController');
+Route::resource('item_penjualan', 'ItemPenjualanController');
+Route::resource('pelanggan', 'PelangganController');
+Route::resource('penjualan', 'PenjualanController');
