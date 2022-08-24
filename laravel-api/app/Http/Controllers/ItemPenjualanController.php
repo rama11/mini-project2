@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ItemPenjualan;
 
 class ItemPenjualanController extends Controller
 {
@@ -14,6 +15,7 @@ class ItemPenjualanController extends Controller
     public function index()
     {
         //
+        return ItemPenjualan::all();
     }
 
     /**
@@ -35,6 +37,11 @@ class ItemPenjualanController extends Controller
     public function store(Request $request)
     {
         //
+        $itemPenjualan = new ItemPenjualan();
+        $itemPenjualan->id_nota = $request->id_nota;
+        $itemPenjualan->kode_barang = $request->kode_barang;
+        $itemPenjualan->qty = $request->qty;
+        $itemPenjualan->save();
     }
 
     /**
@@ -46,6 +53,7 @@ class ItemPenjualanController extends Controller
     public function show($id)
     {
         //
+        return ItemPenjualan::find($id);
     }
 
     /**
@@ -69,6 +77,11 @@ class ItemPenjualanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $itemPenjualan = ItemPenjualan::find($id);
+        $itemPenjualan->id_nota = $request->id_nota;
+        $itemPenjualan->kode_barang = $request->kode_barang;
+        $itemPenjualan->qty = $request->qty;
+        $itemPenjualan->save();
     }
 
     /**
@@ -80,5 +93,6 @@ class ItemPenjualanController extends Controller
     public function destroy($id)
     {
         //
+        return ItemPenjualan::find($id)->delete();
     }
 }
