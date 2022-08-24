@@ -1,98 +1,374 @@
-# mini-project2
+# Dokumentasi API
 
-Mini project ini terdiri dari 3 bagian utama dengan fungsi masing-masing.
+Ada 4 Item yang bisa di test
 
-- Laravel API
-  [Doc](https://github.com/rama11/mini-project2/blob/master/laravel-api/README.md) Dikembangkan dengan Laravel v7 dan dapat diakses melalui link berikut.
-  [Heroku - Laravel API](https://mini-project-laravel.herokuapp.com)
-  
-- ReactJS Web Frontend
-  [Doc](https://github.com/rama11/mini-project2/blob/master/laravel-api/README.md) Dikembangan dengan ReactJS v18 dan dapat diakses melalui link berikut.
-  [Heroku - React Frontend](https://simple2-php-rama11.herokuapp.com/)
-  
-- ReactNative Mobile
-  OnProgress
-  
-## Laravel API
-Berikut hal progress pengerjaan yang saya telah selesaikan sejauh ini.
+- [Test API Barang](https://github.com/rama11/mini-project2/tree/master/laravel-api#test-api-barang)
+- [Test API Pelanggan](https://github.com/rama11/mini-project2/tree/master/laravel-api#test-api-pelanggan)
+- [Test API Penjualan](https://github.com/rama11/mini-project2/tree/master/laravel-api#test-api-penjualan)
+- [Test API ItemPenjualan](https://github.com/rama11/mini-project2/tree/master/laravel-api#test-api-itempenjualan)
 
-:white_check_mark: Local Access
+## Test API Barang
 
-:white_check_mark: Cloud Access (via Heroku)
+Read All
 
-:white_check_mark: CI/CD Heroku
+```sh
+curl -v -X GET https://mini-project-laravel.herokuapp.com/barang | json_pp
+```
 
-:white_check_mark: Local Database
+Read Each
 
-:white_check_mark: Cloud Database
+```sh
+curl -v -X GET https://mini-project-laravel.herokuapp.com/barang/1 | json_pp
+```
 
-:white_check_mark: Database Seed
+Create
 
-:white_check_mark: Testing cURL
+```sh
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Pen' \
+	-F 'kategori=ATK' \
+	-F 'harga=15000' 
 
-:white_check_mark: Model Design
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Pensil' \
+	-F 'kategori=ATK' \
+	-F 'harga=10000' 
 
-:white_check_mark: Controller Design
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Payung' \
+	-F 'kategori=RT' \
+	-F 'harga=70000' 
 
-:white_check_mark: Route URL (resource based)
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Panci' \
+	-F 'kategori=MASAK' \
+	-F 'harga=110000'
 
-:white_check_mark: CRUD Data Pelanggan
-  
-:white_check_mark: CRUD Data Barang
-  
-:white_check_mark: CRUD Penjualan
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Sapu' \
+	-F 'kategori=RT' \
+	-F 'harga=40000'
 
-:x: Access Controll
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Kipas' \
+	-F 'kategori=ELEKTRONIK' \
+	-F 'harga=200000'
 
-:x: Rate Limiter
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Kuali' \
+	-F 'kategori=MASAK' \
+	-F 'harga=120000'
 
-:x: Test Unit
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Sikat' \
+	-F 'kategori=RT' \
+	-F 'harga=30000'
 
-:x: CI/CD AWS EC2
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Gelas' \
+	-F 'kategori=RT' \
+	-F 'harga=25000'
 
- 
-## ReactJS Web
-Berikut hal progress pengerjaan yang saya telah selesaikan sejauh ini.
+curl -v -X POST https://mini-project-laravel.herokuapp.com/barang \
+	-F 'nama=Piring' \
+	-F 'kategori=RT' \
+	-F 'harga=35000'
+```
 
-:white_check_mark: Local Access
+Update
 
-:white_check_mark: Cloud Access (via Heroku)
+```sh
+curl -v -X PUT https://mini-project-laravel.herokuapp.com/barang/1 \
+    -d 'nama=Pen' \
+    -d 'kategori=ATK' \
+    -d 'harga=15000'
+```
 
-:white_check_mark: CI/CD Heroku
+Delete
 
-:white_check_mark: Routing Interface
+```sh
+curl -v -X DELETE https://mini-project-laravel.herokuapp.com/barang/10
+```
 
-:white_check_mark: UI Master Data Pelanggan
-  
-:white_check_mark: UI Transaksi Data Penjualan
-  
-:white_check_mark: UI Master Data Barang
+## Test API Pelanggan
 
-:white_check_mark: Base Layout
-  
-:white_check_mark: Menu Layout
+Read All
 
-:x: Input Validation
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/pelanggan | json_pp
+```
+Read Each
 
-:x: Access Controll (Login)
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/pelanggan/1 | json_pp
+```
 
-:x: Test Unit
+Create
 
-:x: CI/CD AWS EC2
+```sh
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=ANDI' \
+	-F 'domisili=JAK-UT' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=BUDI' \
+	-F 'domisili=JAK-BAR' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=JOHAN' \
+	-F 'domisili=JAK-SEL' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=SINTHA' \
+	-F 'domisili=JAK-TIM' \
+	-F 'jenis_kelamin=WANITA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=ANTO' \
+	-F 'domisili=JAK-UT' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=BUJANG' \
+	-F 'domisili=JAK-BAR' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=JOWAN' \
+	-F 'domisili=JAK-SEL' \
+	-F 'jenis_kelamin=PRIA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=SINTIA' \
+	-F 'domisili=JAK-TIM' \
+	-F 'jenis_kelamin=WANITA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=BUTET' \
+	-F 'domisili=JAK-BAR' \
+	-F 'jenis_kelamin=WANITA'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/pelanggan \
+	-F 'nama=JONNY' \
+	-F 'domisili=JAK-SEL' \
+	-F 'jenis_kelamin=WANITA'
+```
 
-:x: Item Structure
+Update
 
-## ReactJS Web
-Berikut hal progress pengerjaan yang saya telah selesaikan sejauh ini.
+```sh
+curl -v -X PUT https://mini-project-laravel.herokuapp.com/pelanggan/1 \
+	-d 'nama=CINDY' \
+	-d 'domisili=JAK-BAR' \
+	-d 'jenis_kelamin=WANITA'
+```
 
-:x: Layout
+Delete
+	
+```sh
+curl -v -X DELETE https://mini-project-laravel.herokuapp.com/pelanggan/10
+```
 
-:x: API Access Client
+## Test API Penjualan
 
-:x: Page Master Data Pelanggan
+Read All
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/penjualan | json_pp
+```
 
-:x: Page Transaksi Data Penjualan
+Read Each
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/penjualan/1 | json_pp
+```
 
-:x: Page Master Data Barang
+Create
 
-:x: Public Access
+```sh
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/01' \
+	-F 'kode_pelanggan=1' \
+	-F 'sub_total=50000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/01' \
+	-F 'kode_pelanggan=2' \
+	-F 'sub_total=200000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/01' \
+	-F 'kode_pelanggan=3' \
+	-F 'sub_total=430000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/02' \
+	-F 'kode_pelanggan=7' \
+	-F 'sub_total=120000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/02' \
+	-F 'kode_pelanggan=4' \
+	-F 'sub_total=70000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/03' \
+	-F 'kode_pelanggan=8' \
+	-F 'sub_total=230000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/03' \
+	-F 'kode_pelanggan=9' \
+	-F 'sub_total=390000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/03' \
+	-F 'kode_pelanggan=5' \
+	-F 'sub_total=65000'
+	
+curl -v -X POST https://mini-project-laravel.herokuapp.com/penjualan \
+	-F 'tanggal=2018/01/04' \
+	-F 'kode_pelanggan=2' \
+	-F 'sub_total=40000'
+```
+
+Update
+
+```sh
+curl -v -X PUT https://mini-project-laravel.herokuapp.com/penjualan/1 \
+	-d 'tanggal=2018/01/02' \
+	-d 'kode_pelanggan=2' \
+	-d 'sub_total=5000'
+```
+
+Delete
+	
+```sh	
+curl -v -X DELETE https://mini-project-laravel.herokuapp.com/penjualan/9
+```
+
+## Test API ItemPenjualan
+
+Read All
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/item_penjualan | json_pp
+```
+
+Read Each
+```sh	
+curl -v -X GET https://mini-project-laravel.herokuapp.com/item_penjualan/1 | json_pp
+```
+
+Create
+```sh
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=1' \
+	-F 'kode_barang=1' \
+	-F 'qty=2'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=1' \
+	-F 'kode_barang=2' \
+	-F 'qty=2'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=2' \
+	-F 'kode_barang=6' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=3' \
+	-F 'kode_barang=4' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=3' \
+	-F 'kode_barang=7' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=3' \
+	-F 'kode_barang=6' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=4' \
+	-F 'kode_barang=9' \
+	-F 'qty=2'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=4' \
+	-F 'kode_barang=1' \
+	-F 'qty=2'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=5' \
+	-F 'kode_barang=3' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=6' \
+	-F 'kode_barang=7' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=6' \
+	-F 'kode_barang=5' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=6' \
+	-F 'kode_barang=3' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=7' \
+	-F 'kode_barang=5' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=7' \
+	-F 'kode_barang=6' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=7' \
+	-F 'kode_barang=7' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=7' \
+	-F 'kode_barang=8' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=8' \
+	-F 'kode_barang=5' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=8' \
+	-F 'kode_barang=9' \
+	-F 'qty=1'
+
+curl -v -X POST https://mini-project-laravel.herokuapp.com/item_penjualan \
+	-F 'id_nota=9' \
+	-F 'kode_barang=5' \
+	-F 'qty=1'
+```
+
+Update
+
+```sh
+curl -v -X PUT https://mini-project-laravel.herokuapp.com/item_penjualan/1 \
+	-d 'id_nota=1' \
+	-d 'kode_barang=1' \
+	-d 'qty=3'
+```
+
+Delete
+	
+```sh	
+curl -v -X DELETE https://mini-project-laravel.herokuapp.com/item_penjualan/1
+```
