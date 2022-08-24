@@ -4,7 +4,7 @@ Mini project ini terdiri dari 3 bagian utama dengan fungsi masing-masing.
 
 - Laravel API
   Dikembangkan dengan Laravel v7 dan dapat diakses melalui link berikut.
-  [Heroku - Laravel API](https://simple2-php-rama11.herokuapp.com/)
+  [Heroku - Laravel API](https://mini-project-laravel.herokuapp.com)
   
 - ReactJS Web Frontend
   Dikembangan dengan ReactJS v18 dan dapat diakses melalui link berikut.
