@@ -7,8 +7,8 @@ Mini project ini terdiri dari 3 bagian utama dengan fungsi masing-masing.
   [Heroku - Laravel API](https://mini-project-laravel.herokuapp.com)
   
 - ReactJS Web Frontend
-  [Doc](https://github.com/rama11/mini-project2/blob/master/laravel-api/README.md) Dikembangan dengan ReactJS v18 dan dapat diakses melalui link berikut.
-  [Heroku - React Frontend](https://simple2-php-rama11.herokuapp.com/)
+  [Doc](https://github.com/rama11/mini-project2/blob/master/react-app/README.md) Dikembangan dengan ReactJS v18 dan dapat diakses melalui link berikut.
+  [Heroku - React Frontend](https://mini-project-react.herokuapp.com/)
   
 - ReactNative Mobile
   OnProgress
