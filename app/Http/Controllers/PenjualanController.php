@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Penjualan;
 use App\ItemPenjualan;
+use DB;
 
 
 class PenjualanController extends Controller
@@ -55,8 +56,16 @@ class PenjualanController extends Controller
     public function show($id)
     {
         //
+
         $result = Penjualan::find($id);
-        $result->detail = ItemPenjualan::where('id_nota',$id)->get();
+        $result->detail = ItemPenjualan::where('id_nota',$id)
+            ->join('barang','barang.kode','item_penjualan.kode_barang')
+            ->select(
+                "item_penjualan.qty",
+                "barang.nama",
+                DB::raw("(item_penjualan.qty * barang.harga) AS `total_harga`")
+            )
+            ->get();
         return $result;
     }
 
