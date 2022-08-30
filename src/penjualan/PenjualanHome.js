@@ -53,6 +53,7 @@ export default function PenjualanHome () {
                         <Table.HeaderCell>Sub Total</Table.HeaderCell>
                         <Table.HeaderCell>Action</Table.HeaderCell>
                         <Table.HeaderCell>Delete</Table.HeaderCell>
+                        <Table.HeaderCell>Detail</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -64,13 +65,22 @@ export default function PenjualanHome () {
                                 <Table.Cell>{data.tanggal}</Table.Cell>
                                 <Table.Cell>{data.kode_pelanggan}</Table.Cell>
                                 <Table.Cell>{data.sub_total}</Table.Cell>
-                                <Link to='penjualan/update'>
-	                                <Table.Cell>
-	                                    <Button onClick={() => setData(data)}>Update</Button>
-	                                </Table.Cell>
-                                </Link>
                                 <Table.Cell>
-                                    <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                                    <Link to='update'>
+    	                                <Table.Cell>
+    	                                    <Button onClick={() => setData(data)}>Update</Button>
+    	                                </Table.Cell>
+                                    </Link>
+                                </Table.Cell>
+                                <Table.Cell>
+                                    <Button onClick={() => onDelete(data.id_nota)}>Delete</Button>
+                                </Table.Cell>
+                                <Table.Cell>
+                                    <Link to='detail'>
+                                        <Table.Cell>
+                                            <Button onClick={() => setData(data)}>Detail</Button>
+                                        </Table.Cell>
+                                    </Link>
                                 </Table.Cell>
                             </Table.Row>
                         )
