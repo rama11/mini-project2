@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Penjualan;
+use App\ItemPenjualan;
 
 
 class PenjualanController extends Controller
@@ -54,7 +55,9 @@ class PenjualanController extends Controller
     public function show($id)
     {
         //
-        return Penjualan::find($id);
+        $result = Penjualan::find($id);
+        $result->detail = ItemPenjualan::where('id_nota',$id)->get();
+        return $result;
     }
 
     /**
