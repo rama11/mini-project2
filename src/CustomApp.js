@@ -9,7 +9,10 @@ import PelangganHome from './pelanggan/PelangganHome'
 import PelangganCreate from './pelanggan/PelangganCreate';
 import PelangganUpdate from './pelanggan/PelangganUpdate';
 import BarangHome from './barang/BarangHome'
+import BarangCreate from './barang/BarangCreate';
+import BarangUpdate from './barang/BarangUpdate';
 import PenjualanHome from './penjualan/PenjualanHome'
+import PenjualanDetail from './penjualan/PenjualanDetail'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -25,6 +28,12 @@ function CustomApp () {
 
 					<Route path="pelanggan/create" element={<PelangganCreate />} />
 					<Route path="pelanggan/update" element={<PelangganUpdate />} />
+
+					<Route path="barang/create" element={<BarangCreate />} />
+					<Route path="barang/update" element={<BarangUpdate />} />
+					
+					<Route path="penjualan/detail" element={<PenjualanDetail />} />
+					
 					<Route path="user/create" element={<Create />} />
 					<Route path="user/read" element={<Read />} />
 					<Route path="user/update" element={<Update />} />
