@@ -28,7 +28,7 @@ export default function BarangHome () {
     }, [])
 
     const onDelete = (id) => {
-    	axios.delete(`http://192.168.18.20:8080/user/${id}`)
+    	axios.delete(`https://mini-project-laravel.herokuapp.com/barang/${id}`)
     	.then(() => {
 	        getData();
 	    })
@@ -64,13 +64,13 @@ export default function BarangHome () {
                                 <Table.Cell>{data.nama}</Table.Cell>
                                 <Table.Cell>{data.kategori}</Table.Cell>
                                 <Table.Cell>{data.harga}</Table.Cell>
-                                <Link to='barang/update'>
+                                <Link to='update'>
 	                                <Table.Cell>
 	                                    <Button onClick={() => setData(data)}>Update</Button>
 	                                </Table.Cell>
                                 </Link>
                                 <Table.Cell>
-                                    <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                                    <Button onClick={() => onDelete(data.kode)}>Delete</Button>
                                 </Table.Cell>
                             </Table.Row>
                         )
