@@ -62,9 +62,11 @@ class PenjualanController extends Controller
             ->join('barang','barang.kode','item_penjualan.kode_barang')
             ->select(
                 "item_penjualan.qty",
+                "barang.kategori",
                 "barang.nama",
                 DB::raw("(item_penjualan.qty * barang.harga) AS `total_harga`")
             )
+            ->orderBy('kategori','ASC')
             ->get();
         return $result;
     }
