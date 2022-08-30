@@ -1,12 +1,12 @@
 import React, { useEffect,useState } from 'react';
-import { Button, Checkbox,Table,Form } from 'semantic-ui-react'
+import { Button,Form } from 'semantic-ui-react'
 import axios from 'axios'
 
 export default function PelangganUpdate () {
 
     const [nama, setNama] = useState('');
     const [domisili, setDomisili] = useState('');
-    const [jenis_kelamin, setJenisKelamin] = useState(false);
+    const [jenis_kelamin, setJenisKelamin] = useState('');
 
     const [id, setIDPelanggan] = useState(null);
 
