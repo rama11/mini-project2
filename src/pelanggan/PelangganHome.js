@@ -28,7 +28,7 @@ export default function PelangganHome () {
     }, [])
 
     const onDelete = (id) => {
-    	axios.delete(`http://192.168.18.20:8080/user/${id}`)
+    	axios.delete(`https://mini-project-laravel.herokuapp.com/pelanggan/${id}`)
     	.then(() => {
 	        getData();
 	    })
