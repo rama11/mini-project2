@@ -6,6 +6,8 @@ import Home from './home';
 import Layout from './layout';
 
 import PelangganHome from './pelanggan/PelangganHome'
+import PelangganCreate from './pelanggan/PelangganCreate';
+import PelangganUpdate from './pelanggan/PelangganUpdate';
 import BarangHome from './barang/BarangHome'
 import PenjualanHome from './penjualan/PenjualanHome'
 
@@ -21,6 +23,8 @@ function CustomApp () {
 					<Route path='barang' element={<BarangHome />} />
 					<Route path='penjualan' element={<PenjualanHome />} />
 
+					<Route path="pelanggan/create" element={<PelangganCreate />} />
+					<Route path="pelanggan/update" element={<PelangganUpdate />} />
 					<Route path="user/create" element={<Create />} />
 					<Route path="user/read" element={<Read />} />
 					<Route path="user/update" element={<Update />} />
