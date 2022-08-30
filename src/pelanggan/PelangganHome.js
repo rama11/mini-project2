@@ -64,13 +64,13 @@ export default function PelangganHome () {
                                 <Table.Cell>{data.nama}</Table.Cell>
                                 <Table.Cell>{data.domisili}</Table.Cell>
                                 <Table.Cell>{data.jenis_kelamin}</Table.Cell>
-                                <Link to='pelanggan/update'>
+                                <Link to='update'>
 	                                <Table.Cell>
 	                                    <Button onClick={() => setData(data)}>Update</Button>
 	                                </Table.Cell>
                                 </Link>
                                 <Table.Cell>
-                                    <Button onClick={() => onDelete(data.id)}>Delete</Button>
+                                    <Button onClick={() => onDelete(data.id_pelanggan)}>Delete</Button>
                                 </Table.Cell>
                             </Table.Row>
                         )
