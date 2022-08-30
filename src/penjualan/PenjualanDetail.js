@@ -14,7 +14,7 @@ import axios from 'axios'
 export default function PenjualanDetail () {
 
     const [id, setIDNota] = useState(null);
-    const [APIData, setAPIData] = useState([]);
+    const [detailPenjualan, setDetailPenjualan] = useState([]);
 
     const [tanggal, setTanggal] = useState('');
     const [kodePelanggan, setKodePelanggan] = useState('');
@@ -29,10 +29,11 @@ export default function PenjualanDetail () {
 		// axios.get(`https://62e78e7793938a545bd3fc60.mockapi.io/api/testing/v1/fakeData`)
         axios.get(`https://mini-project-laravel.herokuapp.com/penjualan/${id}`)
             .then((response) => {
-                setAPIData(response.data);
+                setDetailPenjualan(response.data.detail);
                 setTanggal(response.data.tanggal);
                 setKodePelanggan(response.data.kode_pelanggan);
                 setSubTotal(response.data.sub_total);
+                console.log(response.data.detail)
             })
 	}
 
@@ -47,17 +48,24 @@ export default function PenjualanDetail () {
             <Table>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>ID Nota</Table.HeaderCell>
-                        <Table.HeaderCell>Tanggal</Table.HeaderCell>
-                        <Table.HeaderCell>Kode Pelanggan</Table.HeaderCell>
-                        <Table.HeaderCell>Sub Total</Table.HeaderCell>
-                        <Table.HeaderCell>Action</Table.HeaderCell>
-                        <Table.HeaderCell>Delete</Table.HeaderCell>
-                        <Table.HeaderCell>Detail</Table.HeaderCell>
+                        <Table.HeaderCell>Kategori</Table.HeaderCell>
+                        <Table.HeaderCell>Nama Barang</Table.HeaderCell>
+                        <Table.HeaderCell>Harga</Table.HeaderCell>
+                        <Table.HeaderCell>Total Harga</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
                 <Table.Body>
+                    {detailPenjualan.map((data) => {
+                        return (
+                            <Table.Row>
+                                <Table.Cell>{data.kategori}</Table.Cell>
+                                <Table.Cell>{data.nama}</Table.Cell>
+                                <Table.Cell>{data.qty}</Table.Cell>
+                                <Table.Cell>{data.total_harga}</Table.Cell>
+                            </Table.Row>
+                        )
+                    })}
                 </Table.Body>
             </Table>
         </div>
