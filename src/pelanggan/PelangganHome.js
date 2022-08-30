@@ -47,10 +47,10 @@ export default function PelangganHome () {
             <Table>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>ID</Table.HeaderCell>
-                        <Table.HeaderCell>First Name</Table.HeaderCell>
-                        <Table.HeaderCell>Last Name</Table.HeaderCell>
-                        <Table.HeaderCell>Check Box</Table.HeaderCell>
+                        <Table.HeaderCell>ID Pelanggan</Table.HeaderCell>
+                        <Table.HeaderCell>Nama</Table.HeaderCell>
+                        <Table.HeaderCell>Domisili</Table.HeaderCell>
+                        <Table.HeaderCell>Jenis Kelamin</Table.HeaderCell>
                         <Table.HeaderCell>Action</Table.HeaderCell>
                         <Table.HeaderCell>Delete</Table.HeaderCell>
                     </Table.Row>
